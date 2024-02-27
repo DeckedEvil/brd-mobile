@@ -19,8 +19,13 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: gradle
-
+    - name: Setup Android SDK Tools
+  # You may pin to the exact commit or the version.
+  # uses: android-actions/setup-android@07976c6290703d34c16d382cb36445f98bb43b1f
+      uses: android-actions/setup-android@v3.2.0
+    
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
-      run: ./gradlew brd-android:app:assemble
+      run: ./gradlew build
+    
